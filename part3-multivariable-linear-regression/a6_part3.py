@@ -32,3 +32,16 @@ print("R Squared value:", r_squared)
 #actual prices
 print("***************")
 print("Testing Results")
+
+
+predict= model.predict(xtest)
+
+predict=np.around(predict,2)
+print(predict)
+
+print("\nTesting Multivariable Model with Testing Data:")
+for index in range(len(xtest)):
+    actual = ytest[index] # gets the actual y value from the y test dataset
+    predicted_y = predict[index] # gets the predicted y value from the predict variable
+    x_coord = xtest[index] # gets the x value from the x test dataset
+    print(f"Miles Driven: {x_coord[0]} Age: {x_coord[1]}Price: {x_coord[2]} Actual: {actual} Predicted: {predicted_y}")
